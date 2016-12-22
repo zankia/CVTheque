@@ -20,8 +20,7 @@ class AccueilModel extends Model {
     }
     
     public function registerNewUser($i, $e, $pw, $n, $pr) {
-        return ($this->dbLink->query("INSERT INTO User VALUES ('$i','$e','"
-                . $this->passCrypt($pw) . "','$n','$pr')"));
+        return ($this->dbLink->query("INSERT INTO User (nickname, email, pass, name, firstName) VALUES ('$i','$e','" . $this->passCrypt($pw) . "','$n','$pr')"));
     }
     
     public function recoverPasswd($id) {

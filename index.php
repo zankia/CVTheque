@@ -30,5 +30,5 @@ if(method_exists($control, $action)) {
     $options = $control->getOptions();
     $control->$action($options);
 } else {
-    Controller::error(404);
+    View::error(404);
 }

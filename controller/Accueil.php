@@ -36,7 +36,7 @@ class AccueilController extends Controller {
                 . "ici, futur lien\r\n\r\nSi vous n'êtes concerné par ce message,"
                 . " vous pouvez l'ignorer. Nous vous prions de bien vouloir"
                 . " nous excuser pour la gêne occasionnée.", "From: noreply@zankia.fr");
-        $this->view->setView("inscription");
+        $this->view->setView("inscription.php");
     }
 
     public function connexion() {

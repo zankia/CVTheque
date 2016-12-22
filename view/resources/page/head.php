@@ -7,9 +7,11 @@
     <meta name="keywords" content="#">-->
     <meta name="author" content="Thibault Allard">
     <base href="/CVTheque/">
-    <!-- penser à mettre en place jquery et bootstrap pour faciliter les opérations -->
-    <link rel="shortcut icon" type="image/x-icon" href="view/resource/img/favicon.png">
-    <link rel="stylesheet" type="text/css" href="view/resource/css/style.css" id="css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="view/resources/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="view/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="view/resources/css/bootstrap.min.css">
+    <script src="view/resources/js/jquery.min.js"></script>
+    <script src="view/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="main">
+    <div>
