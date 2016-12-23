@@ -1,10 +1,9 @@
 <?php
 //définition des variables
 
-define('URL_ROOT_PATH', 'http://localhost/CVTheque/');
-define('URI_ROOT_PATH', '/CVTheque/');
+define('URI_ROOT_PATH', dirname($_SERVER['SCRIPT_NAME']) . '/');
+define('URL_ROOT_PATH', 'http://' . $_SERVER['SERVER_NAME'] . URI_ROOT_PATH);
 define('DEBUG', true);
-
 
 //gestion de l'affichage des erreurs
 

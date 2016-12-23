@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label class="sr-only" for="passwd">Mot de passe</label>
-                <input id="passwd" name="passwd" class="form-control" placeholder="Mot de passe" required>
+                <input type="password" id="passwd" name="passwd" class="form-control" placeholder="Mot de passe" required>
             </div>
             <button type="submit" name="validate" class="btn btn-primary">Se connecter</button>
             <button type="submit" name="recover" class="btn btn-default">Mot de passe oublié</button>

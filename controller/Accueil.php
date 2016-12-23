@@ -53,7 +53,7 @@ class AccueilController extends Controller {
         foreach($userAttributes as $key => $att) {
             $_SESSION[$key] = $att;
         }
-        header("Location: " . URL_ROOT_PATH . "Stream");
+        self::redirectIfConnected();
     }
 
     public function retrouverMP($name) {
