@@ -18,7 +18,6 @@ class AdminController extends Controller {
 
     public function display() {
         $tuples = $this->model->getUsers();
-        $this->view->setView("admin");
-        $this->view->render();
+        $this->view->setView("admin.php", $tuples);
     }
 }

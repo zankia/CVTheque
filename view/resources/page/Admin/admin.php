@@ -1,1 +1,1 @@
-<?php var_dump($tuples) ?>
+        <h1>Page d'administration</h1>

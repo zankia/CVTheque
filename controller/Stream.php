@@ -8,10 +8,10 @@ class StreamController extends Controller {
         parent::__construct($args);
         self::redirectIfNotConnected();
         include "view/Stream.php";
-        $view = new StreamView();
+        $this->view = new StreamView();
     }
 
     public function display() {
-        $this->view->setView("stream");
+        $this->view->setView("stream.php");
     }
 }
