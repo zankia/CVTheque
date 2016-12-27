@@ -7,11 +7,11 @@
     <meta name="keywords" content="#">-->
     <meta name="author" content="Thibault Allard">
     <base href="<?php echo URI_ROOT_PATH ?>">
-    <link rel="shortcut icon" type="image/x-icon" href="view/resources/img/favicon.png">
-    <link rel="stylesheet" type="text/css" href="view/resources/css/style.css">
-    <link rel="stylesheet" type="text/css" href="view/resources/css/bootstrap.min.css">
-    <script src="view/resources/js/jquery.min.js"></script>
-    <script src="view/resources/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
     <div>
