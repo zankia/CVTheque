@@ -14,4 +14,9 @@ class StreamController extends Controller {
     public function display() {
         $this->view->setView("stream.php");
     }
+
+    public function deconnexion() {
+        session_unset();
+        self::redirectIfNotConnected();
+    }
 }
