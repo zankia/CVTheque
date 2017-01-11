@@ -5,7 +5,7 @@ abstract class Model {
     private $salt;
 
     public function __construct() {
-        $config = parse_ini_file('./config.ini');
+        $config = parse_ini_file('/var/www/config.ini');
         $this->salt = $config['salt'];
         try {
             $this->dbLink = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'], $config['username'], $config['password']);
