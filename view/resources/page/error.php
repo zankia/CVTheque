@@ -19,6 +19,15 @@ case 14:
 case 404:
     echo 'Page introuvable';
     break;
+case 3673:
+    echo 'Impossible d\'uploader le fichier';
+    break;
+case 3674:
+    echo 'Fichier malicieux';
+    break;
+case 3675:
+    echo 'Fichier vide';
+    break;
 default:
     echo 'Non gérée';
     break;
