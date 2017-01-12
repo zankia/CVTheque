@@ -1,0 +1,1 @@
+<p class="text-success">Votre CV a bien été uploadé.</p>
