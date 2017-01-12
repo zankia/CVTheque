@@ -16,8 +16,25 @@ class AdminController extends Controller {
         $this->view = new AdminView();
     }
 
-    public function display() {
+    public function userlist() {
         $tuples = $this->model->getUsers();
-        $this->view->setView("admin.php", $tuples);
+        $this->view->setView("userlist.php", $tuples);
+    }
+    public function display() {
+        $this->view->setView("admin.php");
+    }
+    public function deleteUser ($request) {
+        if ($this->model->deleteUser($request[0]))
+            header("Location: ../Userlist");
+
+    }
+
+    public function promoteAdmin ($request) {
+        if ($this->model->changeAdminStatus($request[0], true))
+            header("Location: ../Userlist");
+    }
+    public function demoteAdmin ($request) {
+        if ($this->model->changeAdminStatus($request[0], false))
+            header("Location: ../Userlist");
     }
 }

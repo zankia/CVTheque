@@ -1,6 +1,7 @@
 <?php
 
 class View {
+
     public static function setView($view, $params = null) {
         $viewSet = array('head.php');
         
