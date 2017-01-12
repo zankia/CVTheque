@@ -37,4 +37,25 @@ class AdminController extends Controller {
         if ($this->model->changeAdminStatus($request[0], false))
             header("Location: ../Userlist");
     }
+
+    public function searchUser () {
+        $request = $this->model->searchUser($_POST['nickname']);
+        $this->view->setView("userlist.php", $request);
+    }
+    public function enableUser ($request) {
+        if ($this->model->changeUserStatus($request[0],     true))
+            header("Location: ../Userlist");
+
+    }
+    public function disableUser ($request) {
+        if ($this->model->changeUserStatus($request[0], false))
+            header("Location: ../Userlist");
+    }
+    public function modifyUser () {
+        if ($this->model->modifyUser ($_POST['id'], $_POST['name'], $_POST['firstname'], $_POST['mail'], $_POST['passwd']))
+            header("Location: ../Admin/Userlist");
+
+
+
+    }
 }
