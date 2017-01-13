@@ -1,1 +1,1 @@
-        <h2>Votre nouveau mot de passe vient de vous être envoyé par mail</h2>
+        <h2>Un email vient de vous être envoyé. Suivez les insctructions afin de changer votre mot de passe.</h2>

@@ -33,7 +33,7 @@ class AccueilModel extends Model {
         $compo = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
         $newPass = substr(str_shuffle($compo), 0, 8);
         $res['pass'] = $newPass;
-        $this->dbLink->query("UPDATE User SET pass = '" . $this->passCrypt($newPass) . "' WHERE nickname = '" . $res['nickname'] . "'");
+        $this->dbLink->query("UPDATE User SET recover = NULL, pass = '" . $this->passCrypt($newPass) . "' WHERE nickname = '" . $res['nickname'] . "'");
         return $res;
     }
 
@@ -46,7 +46,7 @@ class AccueilModel extends Model {
         if(($res = $query->fetch()) === false)
             return false;
 
-        $this->dbLink->query("UPDATE User SET recover = $hash WHERE nickname = '" . $res['nickname'] . "'");
+        $this->dbLink->query("UPDATE User SET recover = '$hash' WHERE nickname = '" . $res['nickname'] . "'");
         $res['recover'] = $hash;
         return $res;
     }
