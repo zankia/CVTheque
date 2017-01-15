@@ -4,7 +4,7 @@ class View {
 
     public static function setView($view, $params = null) {
         $viewSet = array('head.php');
-        
+
         // si la vue est un tableau
         if (is_array($view)){
             foreach ($view as $file) {
