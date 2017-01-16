@@ -28,6 +28,9 @@ case 3674:
 case 3675:
     echo 'Fichier vide';
     break;
+case 3758:
+    echo 'Formulaire incomplet';
+    break;
 default:
     echo 'Non gérée';
     break;
