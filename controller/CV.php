@@ -25,6 +25,7 @@ class CVController extends Controller {
             if($this->model->checkPDFValidity($pdf, $pdfName)){
                 if($this->model->uploadPDF($pdf, $pdfName)){
                     $this->view->uploadSuccessful();
+                    $this->traiterFormulaire();
                 }
                 else {
                     View::error(3673);
@@ -39,4 +40,19 @@ class CVController extends Controller {
         }
 
     }
+
+    public function traiterFormulaire() {
+        if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numsecu']) && isset($_POST['telP'])
+            && isset($_POST['telF']) && isset($_POST['telP']) && isset($_POST['adresse']) && isset($_POST['codePostal'])
+            && isset($_POST['ville']) && isset($_POST['domaine']) ){
+
+            $this->model->uploadUserInformation($_SESSION['nickname'], $_POST['nom'],$_POST['prenom'],$_POST['numsecu'],$_POST['telP'],
+                                                $_POST['telF'],$_POST['telP'], $_POST['adresse'],$_POST['ville'],
+                                                $_POST['codePostal'],$_POST['domaine']);
+        }
+        else{
+            View::error(3758);
+        }
+    }
 }
+
