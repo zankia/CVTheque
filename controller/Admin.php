@@ -17,6 +17,7 @@ class AdminController extends Controller {
     }
 
     public function userlist() {
+
         $tuples = $this->model->getUsers();
         $this->view->setView("userlist.php", $tuples);
     }
@@ -39,11 +40,11 @@ class AdminController extends Controller {
     }
 
     public function searchUser () {
-        $request = $this->model->searchUser($_POST['nickname']);
+        $request = $this->model->searchUser($_GET['nickname']);
         $this->view->setView("userlist.php", $request);
     }
     public function enableUser ($request) {
-        if ($this->model->changeUserStatus($request[0],     true))
+        if ($this->model->changeUserStatus($request[0], true))
             header("Location: ../Userlist");
 
     }
@@ -53,9 +54,6 @@ class AdminController extends Controller {
     }
     public function modifyUser () {
         if ($this->model->modifyUser ($_POST['id'], $_POST['name'], $_POST['firstname'], $_POST['mail'], $_POST['passwd']))
-            header("Location: ../Admin/Userlist");
-
-
-
+            header("Location: ./Userlist?nickname=". $_POST['id']);
     }
 }
