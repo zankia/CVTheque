@@ -22,7 +22,7 @@ class StreamModel extends Model {
     }
 
     public function getSkills($id) {
-        $query = $this->dbLink->prepare("SELECT name FROM Skill JOIN CVSkill ON id = idSkill WHERE idCV = '$id'");
+        $query = $this->dbLink->prepare("SELECT id, name FROM Skill JOIN CVSkill ON id = idSkill WHERE idCV = '$id'");
         $query->execute();
         return $query->fetchAll();
     }
