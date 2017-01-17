@@ -6,4 +6,11 @@ class StreamView extends View {
         parent::setView("Stream/" . $view, $params);
     }
 
+    public static function CVList($params) {
+        $viewList = array("Stream/pager.php",
+                          "Stream/CVList.php",
+                          "Stream/pager.php");
+        parent::setView($viewList, $params);
+    }
+
 }

@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-icon-76x76.png">
-    
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 
@@ -28,4 +28,3 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div>
