@@ -1,11 +1,11 @@
         <h1>Uploader un CV</h1>
           <h3>Bonjour <?php echo $_SESSION["firstName"] ? $_SESSION["firstName"] . ' ' . $_SESSION["name"] : $_SESSION["nickname"] ?>!</h3>
              <form action="CV/ajouterCV" method="post" enctype="multipart/form-data">
-                 Nom :                       <input type="text" name="nom" id="nom"><br/>
-                 Prenom :                    <input type="text" name="prenom" id="prenom"><br/>
-                 Numéro de sécurité sociale :<input type="text" name="numsecu" id="numsecu"><br/>
+                 Nom :                       <input type="text" name="nom" id="nom" required>*<br/>
+                 Prenom :                    <input type="text" name="prenom" id="prenom" required>*<br/>
+                 Numéro de sécurité sociale :<input type="text" name="numsecu" id="numsecu" required>*<br/>
                  <!-- <input type="text" name="//TODO Assurance professionnelle :" id="assurancepro"> -->
-                 Tel portable :              <input type="tel"  name="telP" id="telP"><br/>
+                 Tel portable :              <input type="tel"  name="telP" id="telP" required>*<br/>
                  Tel fixe :                  <input type="tel"  name="telF" id="telF"><br/>
                  Adresse :                   <input type="text" name="adresse" id="adresse"><br/>
                  CP :                        <input type="number" name="codePostal" id="codePostal"><br/>
@@ -32,3 +32,4 @@
                  Remarques :                <input type="remarques" name="remarques" id="remarques"><br/>
                                             <input type="submit" value="Soumettre" name="submit" class="btn btn-primary"><br/>
             </form>
+        <p>* : Ces champs sont obligatoires</p>
