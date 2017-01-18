@@ -43,7 +43,7 @@
                             <h2 class="modal-title">Connexion</h2>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal" action="Accueil/connexion" method="post">
+                            <form class="form-horizontal" action="Home/login" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="id">Nom d'utilisateur ou e-mail</label>
                                     <div class="col-sm-9">
@@ -76,7 +76,7 @@
                             <h2 class="modal-title">Inscription</h2>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal" action="Accueil/inscription" method="post">
+                            <form class="form-horizontal" action="Home/register" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="name">Nom</label>
                                     <div class="col-sm-9">

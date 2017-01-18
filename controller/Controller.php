@@ -34,7 +34,7 @@ abstract class Controller {
 
     final protected static function redirectIfNotConnected() {
         if(!isset($_SESSION["connected"])) {
-            header("Location: " . URL_ROOT_PATH . "Accueil/");
+            header("Location: " . URL_ROOT_PATH . "Home/");
         }
     }
 

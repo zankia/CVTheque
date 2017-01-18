@@ -18,14 +18,14 @@ class CVController extends Controller {
         $this->view->setView("cv.php");
     }
 
-    public function ajouterCV() {
+    public function addCV() {
         if(isset($_FILES['pdf']['tmp_name'])) {
             $pdf = $_FILES['pdf']['tmp_name'];
             $pdfName = $_FILES['pdf']['name'];
             if($this->model->checkPDFValidity($pdf, $pdfName)) {
                 if($this->model->uploadPDF($pdf, $pdfName)) {
                     $this->view->uploadSuccessful();
-                    $this->traiterFormulaire();
+                    $this->treatForm();
                 }
                 else {
                     View::error(3673);
@@ -39,7 +39,7 @@ class CVController extends Controller {
 
     }
 
-    public function traiterFormulaire() {
+    public function treatForm() {
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numsecu'])
             && (isset($_POST['telF']) || isset($_POST['telP']) )) {
 
