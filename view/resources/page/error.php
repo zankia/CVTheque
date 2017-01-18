@@ -28,6 +28,18 @@ case 3674:
 case 3675:
     echo 'Fichier vide';
     break;
+case 3758:
+    echo 'Formulaire incomplet';
+    break;
+case 3759:
+    echo 'Numéro de sécurité sociale invalide';
+    break;
+case 3760:
+    echo 'Numéro de téléphone invalide';
+    break;
+case 3761:
+    echo 'Code postal invalide';
+    break;
 default:
     echo 'Non gérée';
     break;
