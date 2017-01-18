@@ -17,7 +17,6 @@ class AdminController extends Controller {
     }
 
     public function userlist() {
-
         $tuples = $this->model->getUsers();
         $this->view->setView("userlist.php", $tuples);
     }
@@ -29,7 +28,6 @@ class AdminController extends Controller {
             header("Location: ../Userlist");
 
     }
-
     public function promoteAdmin ($request) {
         if ($this->model->changeAdminStatus($request[0], true))
             header("Location: ../Userlist");
