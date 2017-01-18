@@ -1,97 +1,30 @@
-        <header>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-12">Nos services <small>Connectez vous pour y accéder.</small></h1>
+                </div>
+
+                <div class="row">
+                    <span class="col-sm-6 glyphicon glyphicon-save"></span>
+                    <span class="col-sm-6 glyphicon glyphicon-search"></span>
+                </div>
+                <div class="row">
+                    <h3 class="col-sm-6">Déposer une annonce (entreprise)<br>ou un CV (candidat)</h3>
+                    <h3 class="col-sm-6">Chercher un profil (entreprise)<br>ou consulter les annonces (candidat)</h3>
+                </div>
+            </div>
+        </div>
+        <div id="presentation" class="container">
+            <div  class="row">
+                <h1 class="col-sm-12">Qui sommes-nous ?</h1>
+            </div>
             <div class="row">
-                <img src="img/logo.png" class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1">
-                <span class="col-xs-4 col-sm-4"></span>
-                <h1 class="col-xs-offset-4 col-sm-offset-4 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1"><b>CVT</b>hèque</h1>
-                <div>
-                    <a class="btn btn-default" href="#" role="button"><span class="glyphicon glyphicon-log-in"></span>Se connecter</a>
-                    <a class="btn btn-default" href="#" role="button">S'inscrire</a>
-                </div>
+                <p class="col-sm-6">
+                    L'équipe Zankia est heureux de vous présenter sa CVThèque. Il permet d'une part, pour des candidats, de déposer leurs CV.
+                    D'autre part, les recruteurs peuvent consulter la liste des CV, effectuer des recherches et envoyer des e-mails aux candidats.
+                    Ce site a été réalisé dans le cadre d'un projet universitaire.
+                    Notre équipe est composée de quatres étudiants en deuxième année de DUT Informatique sur le site d'Aix.
+                </p>
+                <img src="img/logo.png" alt="Logo CVTheque" class="col-sm-6">
             </div>
-        </header>
-
-
-        <div>
-            <h2>Veuillez vous connecter</h2>
-            <form class="form-inline" action="Accueil/connexion" method="post">
-            <div class="form-group">
-                <label class="sr-only" for="id">Nom d'utilisateur ou mail</label>
-                <input id="id" name="id" class="form-control" placeholder="Nom d'utilisateur ou mail" required>
-            </div>
-            <div class="form-group">
-                <label class="sr-only" for="passwd">Mot de passe</label>
-                <input type="password" id="passwd" name="passwd" class="form-control" placeholder="Mot de passe" required>
-            </div>
-            <button type="submit" name="validate" class="btn btn-primary">Se connecter</button>
-            <button type="submit" name="recover" class="btn btn-default">Mot de passe oublié</button>
-            </form>
-        </div>
-
-
-        <h3>Si vous n'avez pas encore de compte, vous pouvez vous inscrire</h3>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#sign">S'inscrire</button>
-
-        <div id="sign" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">Inscription</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal" action="Accueil/inscription" method="post">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="name">Nom</label>
-                                <div class="col-sm-9">
-                                    <input id="name" name="name" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="firstname">Prenom</label>
-                                <div class="col-sm-9">
-                                    <input id="firstname" name="firstname" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="id">Nom d'utilisateur*</label>
-                                <div class="col-sm-9">
-                                    <input id="id" name="id" class="form-control" pattern="[A-Za-z0-9]{3,24}" title="Au moins 3 caractères, pas de caractères spéciaux ni d'espacement" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="passwd">Mot de passe*</label>
-                                <div class="col-sm-9">
-                                    <input type="password" id="passwd" name="passwd" class="form-control" pattern=".{8,}" title="Au moins 8 caractères" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="passwdconf">Confirmation*</label>
-                                <div class="col-sm-9">
-                                    <input type="password" id="passwdconf" name="passwdconf" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" for="mail">Adresse mail*</label>
-                                <div class="col-sm-9">
-                                    <input type="email" id="mail" name="mail" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <p>* : champs requis</p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <input type="submit" class="btn btn-primary" value="S'inscrire">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <p class="col-md-offset-2">CVTheque est une bibliothèque de CV</p>
         </div>

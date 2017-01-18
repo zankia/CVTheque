@@ -57,14 +57,26 @@ class AccueilController extends Controller {
     }
 
     public function retrouverMP($name) {
-        if(($result = $this->model->recoverPasswd($name[0])) === false) {
-            View::error(15);
+        if(!$result = $this->model->generateHashRecover($name[0])) {
+            View::error(15); // Si la personne n'existe pas
         }
-        mail($result["email"], "Votre nouveau mot de passe sur CVTheque", "Bonjour "
-                . $result["nickname"] . ",\r\n\r\nVoici votre nouveau mot de passe :\r\n"
-                . $result["pass"] . "\r\n\r\nCe mot de passe doit rester"
-                . " confidentiel, veuillez ne pas le montrer ni le communiquer.",
+        mail($result["email"], "Réinitialiser votre mot de passe CVTheque", "Bonjour " . $result["nickname"]
+                . ",\r\n\r\nVotre mot de passe CVTheque peut être regénéré avec ce lien.\r\n"
+                . "Si vous n'êtes pas à l'origine de cette demande, veuillez ignorer ce message.\r\n"
+                . "\r\n\r\nPour réinitialiser votre mot de passe, visiter l'adresse :\r\n"
+                . "http://zankia.fr/iut/php/florian/CVTheque/Accueil/genererMotDePasse/". $result['recover'] . "\r\n",
                 "From: noreply@zankia.fr");
         $this->view->setView("retrouverMP.php");
+    }
+
+    public function genererMotDePasse($hash) {
+        if(!$result = $this->model->recoverPasswd($hash[0])) {
+            View::error(16); // Si le hash n'existe pas
+        }
+        mail($result["email"], "Votre nouveau mot de passe CVTheque", "Bonjour "
+            . $result["nickname"] . ",\r\n\r\nVoici votre nouveau mot de passe :\r\n"
+            . $result["pass"] . "\r\n\r\nCe mot de passe doit rester"
+            . " confidentiel, veuillez ne pas le montrer ni le communiquer.",
+            "From: noreply@zankia.fr");
     }
 }
