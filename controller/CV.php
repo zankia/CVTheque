@@ -42,9 +42,8 @@ class CVController extends Controller {
     }
 
     public function traiterFormulaire() {
-        if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numsecu']) && isset($_POST['telP'])
-            && isset($_POST['telF']) && isset($_POST['telP']) && isset($_POST['adresse']) && isset($_POST['codePostal'])
-            && isset($_POST['ville']) && isset($_POST['domaine']) ){
+        if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['numsecu'])
+            && (isset($_POST['telF']) || isset($_POST['telP']) )){
 
             $this->model->uploadUserInformation($_SESSION['nickname'], $_POST['nom'],$_POST['prenom'],$_POST['numsecu'],$_POST['telP'],
                                                 $_POST['telF'],$_POST['telP'], $_POST['adresse'],$_POST['ville'],
@@ -55,4 +54,3 @@ class CVController extends Controller {
         }
     }
 }
-
