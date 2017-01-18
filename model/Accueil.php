@@ -50,18 +50,4 @@ class AccueilModel extends Model {
         $res['recover'] = $hash;
         return $res;
     }
-
-    public function generateHashRecover($id) {
-        $hash = uniqid();
-
-        $query = $this->dbLink->prepare('SELECT nickname, email FROM User WHERE nickname = :id OR email = :id');
-        $query->bindParam(':id', $id, PDO::PARAM_STR, 42);
-        $query->execute();
-        if(($res = $query->fetch()) === false)
-            return false;
-
-        $this->dbLink->query("UPDATE User SET recover = $hash WHERE nickname = '" . $res['nickname'] . "'");
-        $res['recover'] = $hash;
-        return $res;
-    }
 }
