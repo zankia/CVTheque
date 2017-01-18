@@ -3,8 +3,8 @@
 <head>
     <title>CVThèque</title>
     <meta charset="UTF-8">
-    <!--<meta name="description" content="#">
-    <meta name="keywords" content="#">-->
+    <meta name="description" content="CVThèque ayant pour but d\'affecter des ressources sur des missions selon des profils recherchés.">
+    <meta name="keywords" content="CVThèque plateforme cv offres annonces missions profils etudiants recrutement recherche stages emplois entreprises">
     <meta name="author" content="Thibault Allard, Antoine Guillory, Axel Houlès et Florian Juroszek">
     <base href="<?php echo URI_ROOT_PATH ?>">
 
@@ -20,9 +20,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>

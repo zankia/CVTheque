@@ -12,3 +12,67 @@
     -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
     box-shadow: 0 0 8px rgba(82,168,236,.6);
 }
+body {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* HEADER */
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-brand>img {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.account a:first-child {
+    padding: 5px 8px;
+    text-transform : uppercase;
+}
+
+.btn-primary {
+    background-color: #29303b;
+    border-color: #9d9d9d;
+    color: #ffffff !important;
+    padding-right: 5px;
+}
+.btn-primary:focus {
+    color: #29303b !important;
+}
+
+.btn-primary:hover {
+    color: #29303b !important;
+}
+
+.btn-link {
+    margin-left: 0.5em;
+    color: #191c22;
+}
+
+/* ACCEUIL */
+.container-fluid {
+    min-height: 500px;
+    color: #ffffff;
+    background-color:#29303b;
+}
+
+.container-fluid>h3 {
+    text-align: center;
+}
+
+.container-fluid .glyphicon {
+    font-size: 150px;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+/* STREAM */
+p {
+    text-align: justify;
+}
