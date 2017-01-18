@@ -12,7 +12,7 @@ abstract class Model {
             $this->dbLink->exec("SET CHARACTER SET utf8");
         } catch (PDOException $e) {
             var_dump($e);
-            Controller::error(10);
+            View::error(10);
         }
     }
 

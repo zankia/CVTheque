@@ -1,7 +1,9 @@
 <?php
 
 class AccueilView extends View {
+
     public static function setView($view, $params = null) {
-        parent::setView("Accueil/" . $view, $params);
+        $viewSet = array('header.php', 'Accueil/'. $view);
+        parent::setView($viewSet, $params);
     }
 }

@@ -24,8 +24,8 @@ class AccueilModel extends Model {
     }
     
     public function recoverPasswd($id) {
-        $query = $this->dbLink->prepare('SELECT nickname, email FROM User WHERE nickname = :id OR email = :id');
-        $query->bindParam(':id', $id, PDO::PARAM_STR, 42);
+        $query = $this->dbLink->prepare('SELECT nickname, email FROM User WHERE recover = :id');
+        $query->bindParam(':id', $id, PDO::PARAM_STR, 13);
         $query->execute();
         if(($res = $query->fetch()) === false)
             return false;
@@ -33,7 +33,21 @@ class AccueilModel extends Model {
         $compo = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
         $newPass = substr(str_shuffle($compo), 0, 8);
         $res['pass'] = $newPass;
-        $this->dbLink->query("UPDATE User SET pass = '" . $this->passCrypt($newPass) . "' WHERE nickname = '" . $res['nickname'] . "'");
+        $this->dbLink->query("UPDATE User SET recover = NULL, pass = '" . $this->passCrypt($newPass) . "' WHERE nickname = '" . $res['nickname'] . "'");
+        return $res;
+    }
+
+    public function generateHashRecover($id) {
+        $hash = uniqid();
+
+        $query = $this->dbLink->prepare('SELECT nickname, email FROM User WHERE nickname = :id OR email = :id');
+        $query->bindParam(':id', $id, PDO::PARAM_STR, 42);
+        $query->execute();
+        if(($res = $query->fetch()) === false)
+            return false;
+
+        $this->dbLink->query("UPDATE User SET recover = '$hash' WHERE nickname = '" . $res['nickname'] . "'");
+        $res['recover'] = $hash;
         return $res;
     }
 }
