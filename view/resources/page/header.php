@@ -27,8 +27,8 @@
                         </ul>
                         <div id="account" class="account">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a title="Se Connecter" class="btn btn-primary navbar-btn" href="#" data-toggle="modal" data-target="#connect" role="button"><span class="glyphicon glyphicon-log-in"></span>  Se connecter</a></li>
-                                <li><a class="btn btn-link navbar-btn" href="#" data-toggle="modal" data-target="#sign" role="button">S'inscrire</a></li>
+                                <li><a title="Se Connecter" id="connection" class="btn btn-primary navbar-btn" href="Home/loginForm" data-toggle="modal" data-target="#connect" role="button"><span class="glyphicon glyphicon-log-in"></span>  Se connecter</a></li>
+                                <li><a id="register" class="btn btn-link navbar-btn" href="Home/registerForm" data-toggle="modal" data-target="#sign" role="button">S'inscrire</a></li>
                             </ul>
                         </div>
                     </div><!--/.nav-collapse -->

@@ -4,6 +4,9 @@ $(document).ready(function() {
         toggleSelected($(this));
     });
 
+    $("#connection").attr("href", "#");
+    $("#register").attr("href", "#");
+
 })
 
 
