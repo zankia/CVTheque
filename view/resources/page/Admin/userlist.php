@@ -12,6 +12,7 @@
                 <input type="text" name="nickname" form-control" placeholder="Nom d'utilisateur">
             </div>
             <button type="submit" class="btn btn-default">Rechercher</button>
+            <a href="Admin/userList">Reinitialier la recherche</a>
         </form>
         <div class="panel-body">
             <table class="table">
