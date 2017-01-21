@@ -6,9 +6,9 @@
     } else {?>
 
     <ul class="nav nav-pills nav-stacked">
-       <li role="presentation" class="active"><a href="#">Ajouter un CV</a></li>
-       <li role="presentation"><a href="#">Modifier un CV</a></li>
-       <li role="presentation"><a href="#">Supprimer un CV</a></li>
+       <li role="presentation" class="active"><a href="./CV/">Ajouter un CV</a></li>
+       <li role="presentation"><a href="./Stream/CVList">Modifier un CV</a></li>
+       <li role="presentation"><a href="./Stream/CVList">Supprimer un CV</a></li>
     </ul>
     <?php
     }
