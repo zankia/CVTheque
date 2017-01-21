@@ -1,6 +1,6 @@
         <h1>Uploader un CV</h1>
           <h3>Bonjour <?php echo $_SESSION["firstName"] ? $_SESSION["firstName"] . ' ' . $_SESSION["name"] : $_SESSION["nickname"] ?>!</h3>
-             <form action="CV/ajouterCV" method="post" enctype="multipart/form-data">
+             <form action="CV/addCV" method="post" enctype="multipart/form-data">
                  <p>Nom : *</p><input type="text" name="nom" id="nom" required><br/>
                  <p>Prenom : *</p><input type="text" name="prenom" id="prenom" required><br/>
                  <p>Numéro de sécurité sociale :</p><input type="text" name="numsecu" id="numsecu" required><br/>
