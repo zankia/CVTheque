@@ -1,20 +1,29 @@
     <div id="selector" class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 navbar-fixed-top">
-        <h2>Envoyer un mail</h2>
-        <form action="Stream/sendMail" method="POST">
-            <div class="form-group">
-                <label>idCV</label>
-                <input type="text" class="form-control" name="idCV[]">
-            </div>
-            <div class="form-group">
-                <label for="mail">Contenu du message</label>
-                <textarea class="form-control" id="mail" name="mail" rows=10></textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Envoyer</button>
-        </form>
+        <h2>Div de controle</h2>
     </div>
     <div class="row">
     <?php
+    if ($_SESSION['admin'] ||$_SESSION['consultant']) {
 
+        echo ' 
+        <div class="panel-heading">Liste des CV</div>
+            <form class="navbar-form navbar-left" role="search" method="get" action="Stream/searchCV">
+                <div class="form-group">
+                    <select name="skill"  size="2" multiple>
+                    ';
+            foreach ($params['data'] as $cv)
+                foreach($cv['skills'] as $skill) {
+                    echo '<option value ="'.$skill['name'] .'" >';
+                        echo '<button type="button" class="btn btn-default">' . $skill['name'] . '</button>';
+                }
+         echo'  
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Rechercher</button>
+                <a href="Stream/CVList">Reinitialier la recherche</a>
+            </form>';
+    }
     $i = 0;
     foreach($params['data'] as $cv) {
         echo '
