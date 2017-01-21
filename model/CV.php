@@ -35,7 +35,7 @@
         }
 
         public function uploadUserInformation($nickname, $name, $firstName, $socialSecuNum, $mobile,
-                                              $phone, $address, $postcode, $city, $activityDomain)
+                                              $phone, $address, $postcode, $city)
         {
             $query = $this->dbLink->prepare('UPDATE User SET name = :name, firstName = :firstName, socialSecuNum = :socialSecuNum,
                                               mobile = :mobile, phone = :phone, address = :address, postcode = :postcode,
