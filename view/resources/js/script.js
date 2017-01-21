@@ -10,9 +10,8 @@ $(document).ready(function() {
         toggleSelected($(this), template);
     });
 
-    //gestion du non js pour les boutons du nav
-    $("#connection").attr("href", "#");
-    $("#register").attr("href", "#");
+    //desactivation des liens des modals
+    $('[data-toggle="modal"]').attr("href", "#");
 
 })
 
@@ -35,7 +34,8 @@ function toggleSelected(div, template) {
     } else {
         div.addClass("selected");
         template.attr("id", id);
-        template.find("label").html(div.find("h4").html());
+        var name = div.find("h4").html()
+        template.find("label").html(name.substring(0, name.indexOf("<")));
         template.find("input").attr("value", id);
         $("#selector form").prepend(template.clone());
     }
