@@ -1,5 +1,16 @@
     <div id="selector" class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 navbar-fixed-top">
-        <h2>Div de controle</h2>
+        <h2>Envoyer un mail</h2>
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Pseudo</label>
+                <input type="text" class="form-control" name="nickname[]">
+            </div>
+            <div class="form-group">
+                <label for="mail">Contenu du message</label>
+                <textarea class="form-control" id="mail" name="mail" rows=10></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Envoyer</button>
+        </form>
     </div>
     <div class="row">
     <?php
