@@ -41,4 +41,17 @@ class StreamController extends Controller {
             self::redirectIfConnected();
         }
     }
+
+    public function sendMail() {
+        if($_SESSION['admin'] || $_SESSION['consultant']) {
+            $mail = $_POST['mail'];
+            foreach($_POST['idCV'] as $candidate) {
+                $addr = $this->model->getMailFromCV($candidate);
+                mail($addr, 'Offre d\'emploi', $_POST['mail'], 'From: noreply@zankia.fr');
+            }
+            $this->view->setView('sendMail.php');
+        } else {
+            self::redirectIfConnected();
+        }
+    }
 }

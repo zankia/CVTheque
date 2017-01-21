@@ -26,4 +26,11 @@ class StreamModel extends Model {
         $query->execute();
         return $query->fetchAll();
     }
+
+    public function getMailFromCV($id) {
+        $query = $this->dbLink->prepare('SELECT email FROM User JOIN CV ON nickname = idUser WHERE id = :id');
+        $query->bindParam(':id', $id, PDO::PARAM_INT, 11);
+        $query->execute();
+        return $query->fetch()['email'];
+    }
 }

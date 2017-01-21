@@ -1,9 +1,9 @@
     <div id="selector" class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 navbar-fixed-top">
         <h2>Envoyer un mail</h2>
-        <form action="#" method="GET">
+        <form action="Stream/sendMail" method="POST">
             <div class="form-group">
-                <label>Pseudo</label>
-                <input type="text" class="form-control" name="nickname[]">
+                <label>idCV</label>
+                <input type="text" class="form-control" name="idCV[]">
             </div>
             <div class="form-group">
                 <label for="mail">Contenu du message</label>
