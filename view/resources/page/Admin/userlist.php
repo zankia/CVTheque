@@ -12,6 +12,7 @@
                 <input type="text" name="nickname" form-control" placeholder="Nom d'utilisateur">
             </div>
             <button type="submit" class="btn btn-default">Rechercher</button>
+            <a href="Admin/userList">Reinitialier la recherche</a>
         </form>
         <div class="panel-body">
             <table class="table">
@@ -43,7 +44,7 @@
                             echo '<td class="text-center"><a href="Admin/promoteAdmin/' . $i['nickname'] . '"><i class="glyphicon glyphicon-user text-danger"  aria-hidden="true"></i></a></td>';
                          else
                              echo '<td class="text-center"><a href="Admin/demoteAdmin/' . $i['nickname'] . '"><i class="glyphicon glyphicon-user"  aria-hidden="true"></i></a></td>';
-                         echo '<td class="text-center"> <button class="btn btn-primary glyphicon glyphicon-pen" data-toggle="modal" data-target="#sign' . $i['nickname'] .'"></button>
+                         echo '<td class="text-center"> <button class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#sign' . $i['nickname'] .'"></button>
     
                                 <div id="sign' . $i['nickname'] .'" class="modal fade">
                                     <div class="modal-dialog">

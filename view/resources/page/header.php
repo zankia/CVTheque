@@ -31,7 +31,7 @@
                                 <li><a id="register" class="btn btn-link navbar-btn" href="Home/registerForm" data-toggle="modal" data-target="#sign" role="button">S'inscrire</a></li>
                             </ul>
                         </div>
-                    </div><!--/.nav-collapse -->
+                    </div>
                 </div>
             </nav>
 

@@ -18,6 +18,10 @@ class HomeController extends Controller {
         $this->view->setView("home.php");
     }
 
+    public function registerForm() {
+        $this->view->setView("register.php");
+    }
+
     public function register() {
         if($_POST["passwd"] != $_POST["passwdconf"]) {
             View::error(12);
@@ -36,7 +40,11 @@ class HomeController extends Controller {
                 . "ici, futur lien\r\n\r\nSi vous n'êtes concerné par ce message,"
                 . " vous pouvez l'ignorer. Nous vous prions de bien vouloir"
                 . " nous excuser pour la gêne occasionnée.", "From: noreply@zankia.fr");
-        $this->view->setView("register.php");
+        $this->view->setView("registerSuccess.php");
+    }
+
+    public function loginForm() {
+        $this->view->setView("login.php");
     }
 
     public function login() {

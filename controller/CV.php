@@ -17,8 +17,20 @@ class CVController extends Controller {
     public function display() {
         $this->view->setView("cv.php");
     }
+    public function modifyCV($request) {
+        var_dump($request[0]);
+        $this->view->setView("modifyCV.php", $request);
+    }
+    public function modify () {
+        $this->model->modify ($_SESSION['nickname'], $_POST['nom'],$_POST['prenom'],$_POST['numsecu'],$_POST['telP'],
+            $_POST['telF'],$_POST['telP'], $_POST['adresse'],$_POST['ville'],
+            $_POST['codePostal'],$_POST['domaine']);
+        //header ("Location ../");
+        echo $_SESSION['address'];
 
+    }
     public function addCV() {
+
         if(isset($_FILES['pdf']['tmp_name'])) {
             $pdf = $_FILES['pdf']['tmp_name'];
             $pdfName = $_FILES['pdf']['name'];
@@ -59,4 +71,15 @@ class CVController extends Controller {
             View::error(3758);
         }
     }
+    public function deleteCV ($request) {
+        $login = $this->model->getCVUserId($request[0]);
+        if (($_SESSION['admin'] || $login["idUser"] == $_SESSION['nickname']) && !$_SESSION['consultant']) {
+            if ($this->model->deleteCV($request[0]))
+                header("Location: ../../Stream/CVList");
+        }
+        else {
+            View::error(14);
+        }
+    }
+
 }
