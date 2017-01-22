@@ -48,7 +48,42 @@ class AdminModel extends Model {
         $query->bindParam(':firstName', $firstName, PDO::PARAM_STR, 24);
         $query->bindParam(':email', $email, PDO::PARAM_STR, 42);
         return $query->execute();
+    }
+    public function getSkills () {
+        $query = $this->dbLink->prepare('SELECT * FROM Skill ORDER BY id');
+        $query->execute();
+        return ($query->fetchAll());
+    }
+    public function skillExists ($name) {
+        $query = $this->dbLink->prepare('SELECT * FROM Skill WHERE name = :name');
+        $query->bindParam(':name', $name, PDO::PARAM_STR, 32);
+        $query->execute();
+        if (count($query->fetchAll()) > 0)
+            return true;
+        else
+            return false;
 
 
     }
+    public function addSkill($name) {
+        if ($this->skillExists  ($name)) {
+            return false;
+        }
+        else {
+            $query = $this->dbLink->prepare("INSERT INTO Skill (name) VALUES ('$name')");
+            $query->bindParam(':name', $name, PDO::PARAM_STR, 32);
+            return ($query->execute());
+        }
+    }
+    public function deleteSkill($name) {
+        if (!($this->skillExists  ($name))) {
+            return false;
+        }
+        else {
+            $query = $this->dbLink->prepare("DELETE FROM Skill WHERE name = :name");
+            $query->bindParam(':name', $name, PDO::PARAM_STR, 32);
+            return ($query->execute());
+        }
+    }
+
 }
