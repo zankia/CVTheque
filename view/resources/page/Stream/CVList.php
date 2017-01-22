@@ -16,7 +16,27 @@
 <?php } ?>
     <div class="row">
     <?php
+    if ($_SESSION['admin'] ||$_SESSION['consultant']) {
 
+        echo ' 
+        <div class="panel-heading">Liste des CV</div>
+            <form class="navbar-form navbar-left" role="search" method="get" action="Stream/searchCV">
+                <div class="form-group">
+                    <select name="skill"  size="2" multiple>
+                    ';
+            foreach ($params['data'] as $cv)
+                foreach($cv['skills'] as $skill) {
+                    echo '<option value ="'.$skill['name'] .'" >';
+                        echo '<button type="button" class="btn btn-default">' . $skill['name'] . '</button>';
+                }
+         echo'  
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Rechercher</button>
+                <a href="Stream/CVList">Reinitialier la recherche</a>
+            </form>';
+    }
     $i = 0;
     foreach($params['data'] as $cv) {
         echo '
