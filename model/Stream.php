@@ -21,6 +21,17 @@ class StreamModel extends Model {
         return $query->fetchAll();
     }
 
+    public function searchCV($nickname = null, $page = null, $skill) {
+        $queryString = "SELECT * FROM User WHERE nickname = ANY (SELECT idUser FROM CV WHERE id = ANY (SELECT idCV FROM CVSkill WHERE idSkill = ANY (SELECT id FROM Skill WHERE name = 'java')))";
+        foreach($skill as $s)
+            $queryString .= 'and name = ' . $s;
+
+
+        $query = $this->dbLink->prepare($queryString);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
     public function getSkills($id) {
         $query = $this->dbLink->prepare("SELECT id, name FROM Skill JOIN CVSkill ON id = idSkill WHERE idCV = '$id'");
         $query->execute();

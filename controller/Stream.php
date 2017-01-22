@@ -51,6 +51,35 @@ class StreamController extends Controller {
             $this->view->CVList($params);
         }
     }
+    public function searchCV ($request) {
+        if($_SESSION['admin'] || $_SESSION['consultant']) {
+            $page = array_key_exists(0, $request) ? $request[0] : 1;
+
+            $CVList = $this->model->searchCV(null, $page, $_GET['skill']);
+            echo empty($CVList);
+            foreach($CVList as &$CV) {
+                $CV['skills'] = $this->model->getSkills($CV['id']);
+            }
+
+            $params['data'] = $CVList;
+            $params['count'] = $this->model->getRowCount();
+            $params['now'] = $page;
+            $this->view->CVList($params);
+
+        } else {
+            $page = array_key_exists(0, $request) ? $request[0] : 1;
+
+            $CVList = $this->model->searchCV($_SESSION['nickname'], $page, $request);
+            foreach($CVList as &$CV) {
+                $CV['skills'] = $this->model->getSkills($CV['id']);
+            }
+
+            $params['data'] = $CVList;
+            $params['count'] = $this->model->getRowCount();
+            $params['now'] = $page;
+            $this->view->CVList($params);
+        }
+    }
 
     public function sendMail() {
         if($_SESSION['admin'] || $_SESSION['consultant']) {

@@ -17,7 +17,6 @@ class CVController extends Controller {
         $this->view->setView("cv.php");
     }
     public function modifyCV($request) {
-        var_dump($request[0]);
         $this->view->setView("modifyCV.php", $request);
     }
     public function modify () {
@@ -80,5 +79,6 @@ class CVController extends Controller {
             View::error(14);
         }
     }
+
 
 }
