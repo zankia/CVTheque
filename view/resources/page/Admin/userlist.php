@@ -89,7 +89,7 @@
                                                         <input id="firstname'.$i['nickname'].'" name="firstname" value="' . $i['firstName'] . '"  class="form-control">
                                                     </div>
                                                 </div>
-                                                <input id="id'.$i['nickname'].'" name="id" class="form-control" type="hidden" value="' . $i['nickname'] . '" pattern="[A-Za-z0-9]{3,24}" title="Au moins 3 caractères, pas de caractères spéciaux ni d\'espacement">
+                                                <input id="id'.$i['nickname'].'" name="id" class="form-control" type="hidden" value="' . $i['nickname'] . '" title="Au moins 3 caractères, pas de caractères spéciaux ni d\'espacement">
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label" for="passwd'.$i['nickname'].'">Mot de passe*</label>
                                                     <div class="col-sm-9">
