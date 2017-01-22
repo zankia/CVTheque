@@ -34,7 +34,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-default">Rechercher</button>
-                <a href="Stream/CVList">Reinitialier la recherche</a>
+                <a href="Stream/CVList">Réinitialiser</a>
             </form>';
     }
     $i = 0;
