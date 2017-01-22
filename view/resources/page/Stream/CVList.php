@@ -1,3 +1,4 @@
+<?php if($_SESSION['consultant'] || $_SESSION['admin']) { ?>
     <div id="selector" class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 navbar-fixed-top">
         <h2>Envoyer un mail</h2>
         <form action="Stream/sendMail" method="POST">
@@ -12,6 +13,7 @@
             <button type="submit" class="btn btn-default">Envoyer</button>
         </form>
     </div>
+<?php } ?>
     <div class="row">
     <?php
 
@@ -19,7 +21,7 @@
     foreach($params['data'] as $cv) {
         echo '
         <div id="CV_' . $cv['id'] . '" class="CV col-sm-8 col-md-3">
-            <h4>' . $cv['firstName'] . ' ' . $cv['name'] . '';
+            <h4>' . $cv['firstName'] ? $cv['firstName'] . ' ' . $cv['name'] : $cv['nickname'] . '';
             if ($_SESSION['admin'] || !$_SESSION['consultant'])
                 echo ' <a href="./CV/deleteCV/' . $cv['id'] . '" class="glyphicon glyphicon-remove alert-danger"></a>';
         echo ' <a href="./CV/modifyCV/'. $cv['id']. '" class="glyphicon glyphicon-pencil"></a>';

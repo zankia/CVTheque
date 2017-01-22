@@ -15,7 +15,7 @@ class StreamController extends Controller {
     }
 
     public function display() {
-        $this->view->setView('stream.php');
+        $this->CVList(array());
     }
 
     public function deconnexion() {

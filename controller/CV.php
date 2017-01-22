@@ -6,7 +6,6 @@ class CVController extends Controller {
 
     public function __construct($args) {
         parent::__construct($args);
-        self::redirectIfNotConnected();
         include "view/CV.php";
         include "model/CV.php";
         $this->view = new CVView("CV.php");

@@ -11,6 +11,10 @@ body {
 
 /* CVList */
 
+#selector {
+    top: 4em;
+}
+
 .CV {
     cursor: copy;
 }
