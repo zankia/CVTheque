@@ -23,62 +23,26 @@ class StreamController extends Controller {
         self::redirectIfNotConnected();
     }
 
-    public function CVList($request) {
-        if($_SESSION['admin'] || $_SESSION['consultant']) {
-            $page = array_key_exists(0, $request) ? $request[0] : 1;
+    public function CVList($request, $skills = null) {
+        $page = array_key_exists(0, $request) ? $request[0] : 1;
 
-            $CVList = $this->model->getCVList(null, $page);
-            foreach($CVList as &$CV) {
-                $CV['skills'] = $this->model->getSkills($CV['id']);
-            }
+        if($_SESSION['admin'] || $_SESSION['consultant'])
+            $CVList = $this->model->getCVList(null, $page, $skills);
+        else
+            $CVList = $this->model->getCVList($_SESSION['nickname'], $page, $skill);
 
-            $params['data'] = $CVList;
-            $params['count'] = $this->model->getRowCount();
-            $params['now'] = $page;
-            $this->view->CVList($params);
+        foreach($CVList as &$CV)
+            $CV['skills'] = $this->model->getSkills($CV['id']);
 
-        } else {
-            $page = array_key_exists(0, $request) ? $request[0] : 1;
-
-            $CVList = $this->model->getCVList($_SESSION['nickname'], $page);
-            foreach($CVList as &$CV) {
-                $CV['skills'] = $this->model->getSkills($CV['id']);
-            }
-
-            $params['data'] = $CVList;
-            $params['count'] = $this->model->getRowCount();
-            $params['now'] = $page;
-            $this->view->CVList($params);
-        }
+        $params['data'] = $CVList;
+        $params['skillList'] = $this->model->getSkillList();
+        $params['count'] = $this->model->getRowCount();
+        $params['now'] = $page;
+        $this->view->CVList($params);
     }
+
     public function searchCV ($request) {
-        if($_SESSION['admin'] || $_SESSION['consultant']) {
-            $page = array_key_exists(0, $request) ? $request[0] : 1;
-
-            $CVList = $this->model->searchCV(null, $page, $_GET['skill']);
-            echo empty($CVList);
-            foreach($CVList as &$CV) {
-                $CV['skills'] = $this->model->getSkills($CV['id']);
-            }
-
-            $params['data'] = $CVList;
-            $params['count'] = $this->model->getRowCount();
-            $params['now'] = $page;
-            $this->view->CVList($params);
-
-        } else {
-            $page = array_key_exists(0, $request) ? $request[0] : 1;
-
-            $CVList = $this->model->searchCV($_SESSION['nickname'], $page, $request);
-            foreach($CVList as &$CV) {
-                $CV['skills'] = $this->model->getSkills($CV['id']);
-            }
-
-            $params['data'] = $CVList;
-            $params['count'] = $this->model->getRowCount();
-            $params['now'] = $page;
-            $this->view->CVList($params);
-        }
+        $this->CVList(array(), isset($_GET['skill']) ? $_GET['skill'] : null);
     }
 
     public function sendMail() {
