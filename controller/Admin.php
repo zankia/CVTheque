@@ -54,4 +54,33 @@ class AdminController extends Controller {
         if ($this->model->modifyUser ($_POST['id'], $_POST['name'], $_POST['firstname'], $_POST['mail'], $_POST['passwd']))
             header("Location: ./Userlist?nickname=". $_POST['id']);
     }
+
+    public function skillList () {
+        $tuples = $this->model->getSkills();
+        $this->view->setView("skillList.php", $tuples);
+    }
+    public function addSkill () {
+        if ($_SESSION['admin']) {
+            if ($this->model->addSkill($_GET['name']))
+                header("Location: ./skillList");
+            else
+                View::error(15);
+        }
+        else {
+            View::error(16);
+        }
+
+    }
+
+    public function deleteSkill () {
+        if ($_SESSION['admin']) {
+            if ($this->model->deleteSkill($_GET['name']))
+                header("Location: ./skillList");
+            else
+                View::error(15);
+        }
+        else {
+            View::error (16);
+        }
+    }
 }

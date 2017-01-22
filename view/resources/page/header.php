@@ -9,7 +9,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand navbar-left" href="#"><img alt="Logo CVTheque" src="img/logo.png"</a>
+                        <a class="navbar-brand navbar-left" href="#"><img alt="Logo CVTheque" src="img/logo.png"/></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -30,7 +30,7 @@
                         <div id="account" class="account">
                             <ul class="nav navbar-nav navbar-right">
 <?php if(isset($_SESSION['nickname'])) { ?>
-                                <p class="navbar-text">Bonjour <?php echo $_SESSION['firstName'] ? $_SESSION['firstName'] . ' ' . $_SESSION['name'] : $_SESSION['nickname'] ?>!</p>
+                                <li><p class="navbar-text">Bonjour <?php echo $_SESSION['firstName'] ? $_SESSION['firstName'] . ' ' . $_SESSION['name'] : $_SESSION['nickname'] ?>!</p></li>
                                 <li><a title="Se déconnecter" id="connection" class="btn btn-primary navbar-btn" href="Stream/deconnexion" role="button"><span class="glyphicon glyphicon-log-out"></span>  Se déconnecter</a></li>
 <?php } else { ?>
                                 <li><a title="Se Connecter" id="connection" class="btn btn-primary navbar-btn" href="Home/loginForm" data-toggle="modal" data-target="#connect" role="button"><span class="glyphicon glyphicon-log-in"></span>  Se connecter</a></li>
@@ -58,9 +58,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="passwd">Mot de passe</label>
+                                    <label class="col-sm-3 control-label" for="password">Mot de passe</label>
                                     <div class="col-sm-9">
-                                        <input type="password" id="passwd" name="passwd" class="form-control" placeholder="Mot de passe">
+                                        <input type="password" id="password" name="passwd" class="form-control" placeholder="Mot de passe">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -97,9 +97,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="id">Nom d'utilisateur*</label>
+                                    <label class="col-sm-3 control-label" for="idUser">Nom d'utilisateur*</label>
                                     <div class="col-sm-9">
-                                        <input id="id" name="id" class="form-control" pattern="[A-Za-z0-9]{3,24}" title="Au moins 3 caractères, pas de caractères spéciaux ni d'espacement" required>
+                                        <input id="idUser" name="id" class="form-control" pattern="[A-Za-z0-9]{3,24}" title="Au moins 3 caractères, pas de caractères spéciaux ni d'espacement" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -117,7 +117,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="mail">Adresse mail*</label>
                                     <div class="col-sm-9">
-                                        <input type="email" id="mail" name="mail" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"required>
+                                        <input type="email" id="mail" name="mail" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
