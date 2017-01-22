@@ -24,7 +24,7 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-default">Rechercher</button>
-            <a href="Stream/CVList">Reinitialier</a>
+            <a href="Stream/CVList">Reinitialiser</a>
         </form>
     </nav>
 
