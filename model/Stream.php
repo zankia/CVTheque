@@ -8,10 +8,19 @@ class StreamModel extends Model {
         return ceil($query->fetch()[0] / 12);
     }
 
-    public function getCVList($nickname = null, $page = null) {
-        $queryString = 'SELECT * FROM User JOIN CV ON nickname = idUser';
+    public function getCVList($nickname = null, $page = null, $skills = null) {
+        $queryString = 'SELECT * FROM User JOIN CV ON nickname = idUser WHERE nickname IS NOT NULL';
         if(isset($nickname)) {
-            $queryString .= " WHERE nickname = '$nickname'";
+            $queryString .= " AND nickname = '$nickname'";
+        }
+        if(isset($skills)) {
+            $queryString .= ' AND id IN (SELECT idCV FROM Skill JOIN CVSkill ON id = idSkill WHERE id IN(';
+
+            foreach($skills as $skill)
+                $queryString .= "'$skill',";
+
+            $queryString = rtrim($queryString, ',');
+            $queryString .= '))';
         }
         if(isset($page)) {
             $queryString .= ' LIMIT ' . (($page-1) * 12) . ',12';
@@ -21,19 +30,14 @@ class StreamModel extends Model {
         return $query->fetchAll();
     }
 
-    public function searchCV($nickname = null, $page = null, $skill) {
-        $queryString = "SELECT * FROM User WHERE nickname = ANY (SELECT idUser FROM CV WHERE id = ANY (SELECT idCV FROM CVSkill WHERE idSkill = ANY (SELECT id FROM Skill WHERE name = 'java')))";
-        foreach($skill as $s)
-            $queryString .= 'and name = ' . $s;
-
-
-        $query = $this->dbLink->prepare($queryString);
+    public function getSkillList() {
+        $query = $this->dbLink->prepare('SELECT * FROM Skill');
         $query->execute();
         return $query->fetchAll();
     }
 
     public function getSkills($id) {
-        $query = $this->dbLink->prepare("SELECT id, name FROM Skill JOIN CVSkill ON id = idSkill WHERE idCV = '$id'");
+        $query = $this->dbLink->prepare("SELECT DISTINCT id, name FROM Skill JOIN CVSkill ON id = idSkill WHERE idCV = '$id'");
         $query->execute();
         return $query->fetchAll();
     }

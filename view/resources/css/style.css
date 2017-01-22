@@ -13,6 +13,7 @@ body {
 
 #selector {
     top: 4em;
+    z-index: 0;
 }
 
 .CV {

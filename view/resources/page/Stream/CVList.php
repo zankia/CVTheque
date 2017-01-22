@@ -13,30 +13,10 @@
             <button type="submit" class="btn btn-default">Envoyer</button>
         </form>
     </div>
+
 <?php } ?>
     <div class="row">
-    <?php
-    if ($_SESSION['admin'] ||$_SESSION['consultant']) {
-
-        echo ' 
-        <div class="panel-heading">Liste des CV</div>
-            <form class="navbar-form navbar-left" role="search" method="get" action="Stream/searchCV">
-                <div class="form-group">
-                    <select name="skill"  size="2" multiple>
-                    ';
-            foreach ($params['data'] as $cv)
-                foreach($cv['skills'] as $skill) {
-                    echo '<option value ="'.$skill['name'] .'" >';
-                        echo '<button type="button" class="btn btn-default">' . $skill['name'] . '</button>';
-                }
-         echo'  
-                        </option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-default">Rechercher</button>
-                <a href="Stream/CVList">Reinitialier la recherche</a>
-            </form>';
-    }
+<?php
     $i = 0;
     foreach($params['data'] as $cv) {
         echo '
@@ -50,7 +30,7 @@
             <a href="' . $pdfLink . '" data-toggle="modal" data-target="#pdfModal" ><img class="col-xs-12 col-sm-8 col-md-8" src="' . $pdfLink  . '&img=true"></a>';
         foreach($cv['skills'] as $skill) {
             echo '
-            <button type="button" class="btn btn-default">' . $skill['name'] . '</button>';
+            <a class="btn btn-default" href="Stream/searchCV?skill%5B%5D=' . $skill['id']  . '" role="button">' . $skill['name'] . '</a></button>';
         }
         echo '
             <div class="col-xs-12 col-sm-12 col-md-12">
