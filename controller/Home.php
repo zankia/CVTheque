@@ -40,6 +40,12 @@ class HomeController extends Controller {
                 . "ici, futur lien\r\n\r\nSi vous n'êtes concerné par ce message,"
                 . " vous pouvez l'ignorer. Nous vous prions de bien vouloir"
                 . " nous excuser pour la gêne occasionnée.", "From: noreply@zankia.fr");
+
+        // Envoie des mails aux admins
+        $adminsMails = $this->model->getAdminsMails();
+        foreach ($adminsMails as $mail) {
+            mail($mail[0], 'Un nouvel utilisateur s\'est inscrit sur CVTheque : ' . $_POST['id'], 'Veuillez valider son compte', 'From: noreply@zankia.fr');
+        }
         $this->view->setView("registerSuccess.php");
     }
 

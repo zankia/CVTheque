@@ -50,4 +50,9 @@ class HomeModel extends Model {
         $res['recover'] = $hash;
         return $res;
     }
+    public function getAdminsMails () {
+        $query = $this->dbLink->prepare('SELECT  email FROM User WHERE admin = 1');
+        $query->execute();
+        return $query->fetchAll();
+    }
 }
