@@ -1,7 +1,21 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
 #up {
     position: fixed;
     right: 1em;
     bottom: 1em;
+}
+
+/* CVList */
+
+.CV {
+    cursor: copy;
+}
+.CV > a img {
+    cursor: zoom-in;
 }
 
 .selected {
@@ -12,10 +26,20 @@
     -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
     box-shadow: 0 0 8px rgba(82,168,236,.6);
 }
-body {
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+
+#pdfModal > .modal-dialog {
+    height: 90%;
+    width: initial;
 }
+
+#pdfModal .modal-content, #pdfModal iframe {
+    height: 100%;
+}
+
+#pdfModal iframe {
+    width: 100%;
+}
+
 
 /* HEADER */
 

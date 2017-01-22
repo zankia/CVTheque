@@ -10,6 +10,10 @@ $(document).ready(function() {
         toggleSelected($(this), template);
     });
 
+    $('.CV > a[data-toggle="modal"]').click(function() {
+        setIframePDF($(this))
+    });
+
     //desactivation des liens des modals
     $('[data-toggle="modal"]').attr("href", "#");
 
@@ -33,12 +37,20 @@ function toggleSelected(div, template) {
         $("#" + id).remove();
     } else {
         div.addClass("selected");
-        template.attr("id", id);
-        var name = div.find("h4").html()
-        template.find("label").html(name.substring(0, name.indexOf("<")));
-        template.find("input").attr("value", id);
-        $("#selector form").prepend(template.clone());
+        if(template) {
+            template.attr("id", id);
+            var name = div.find("h4").html()
+            template.find("label").html(name.substring(0, name.indexOf("<")));
+            template.find("input").attr("value", id);
+            $("#selector form").prepend(template.clone());
+        }
     }
+}
+
+function setIframePDF(link) {
+    toggleSelected(link.parent());
+    var id = link.parent().attr("id").substring(3);
+    $("#pdfModal iframe").attr("src", "img/pdfViewer.php?name=" + id);
 }
 
 function scrollToTop() {
