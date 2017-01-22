@@ -35,9 +35,8 @@ class HomeController extends Controller {
             View::error(14);
         }
         mail($_POST["mail"], "Confirmation d'inscription sur CVTheque", "Bonjour "
-                . $_POST["id"] . ",\r\n\r\nVotre compte a bien été enregistré. Pour"
-                . " confirmer votre inscription, Veuillez cliquer sur ce lien :\r\n"
-                . "ici, futur lien\r\n\r\nSi vous n'êtes concerné par ce message,"
+                . $_POST["id"] . ",\r\n\r\nVotre compte a bien été enregistré. 
+                    \r\n\r\nSi vous n'êtes concerné par ce message,"
                 . " vous pouvez l'ignorer. Nous vous prions de bien vouloir"
                 . " nous excuser pour la gêne occasionnée.", "From: noreply@zankia.fr");
 
