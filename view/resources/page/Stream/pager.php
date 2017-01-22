@@ -1,4 +1,4 @@
-    <nav class="navbar"aria-label="Page navigation">
+    <nav class="navbar" aria-label="Page navigation">
         <ul class="pagination nav navbar-nav">
             <li><a href="Stream/CVList/<?php echo $params['now'] -1 ?>" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
             <?php
@@ -24,7 +24,7 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-default">Rechercher</button>
-            <a href="Stream/CVList">Reinitialiser</a>
+            <a href="Stream/CVList">Réinitialiser</a>
         </form>
     </nav>
 

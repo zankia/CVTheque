@@ -7,8 +7,8 @@
                 <input type="text" class="form-control" name="idCV[]">
             </div>
             <div class="form-group">
-                <label for="mail">Contenu du message</label>
-                <textarea class="form-control" id="mail" name="mail" rows=10></textarea>
+                <label for="email">Contenu du message</label>
+                <textarea class="form-control" id="email" name="mail" rows=10></textarea>
             </div>
             <button type="submit" class="btn btn-default">Envoyer</button>
         </form>
@@ -27,10 +27,10 @@
         echo ' <a href="./CV/modifyCV/'. $cv['id']. '" class="glyphicon glyphicon-pencil"></a>';
         $pdfLink = 'img/pdfViewer.php?name=' . $cv['id'];
         echo '</h4>
-            <a href="' . $pdfLink . '" data-toggle="modal" data-target="#pdfModal" ><img class="col-xs-12 col-sm-8 col-md-8" src="' . $pdfLink  . '&img=true"></a>';
+            <a href="' . $pdfLink . '" data-toggle="modal" data-target="#pdfModal" ><img class="col-xs-12 col-sm-8 col-md-8" src="' . $pdfLink  . '&img=true" alt="Prévue du PDF"></a>';
         foreach($cv['skills'] as $skill) {
             echo '
-            <a class="btn btn-default" href="Stream/searchCV?skill%5B%5D=' . $skill['id']  . '" role="button">' . $skill['name'] . '</a></button>';
+            <a class="btn btn-default" href="Stream/searchCV?skill%5B%5D=' . $skill['id']  . '" role="button">' . $skill['name'] . '</a>';
         }
         echo '
             <div class="col-xs-12 col-sm-12 col-md-12">
