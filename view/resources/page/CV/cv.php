@@ -1,6 +1,4 @@
-    <h1>Uploader un CV</h1>
-    <h3>Bonjour <?php echo $_SESSION["firstName"] ? $_SESSION["firstName"] . ' ' . $_SESSION["name"] : $_SESSION["nickname"] ?>!</h3>
-    <div class="container" id="formulaire">
+    <div id="formulaire" class="container">
         <form action="CV/addCV" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group" >
                 <label for="nom" class="col-2 col-form-label">Nom</label>

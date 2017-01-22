@@ -17,18 +17,25 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos services <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Déposer un CV</a></li>
-                                    <li><a href="#">Chercher un CV</a></li>
+                                    <li><a href="CV">Déposer un CV</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">En savoir plus...</li>
-                                    <li><a href="#">Nous contacter</a></li>
+                                    <li><a href="mailto:zankia16@gmail.com">Nous contacter</a></li>
                                 </ul>
                             </li>
+<?php if(isset($_SESSION['admin']) && $_SESSION['admin']) { ?>
+                            <li><a href="Admin">Administration</a></li>
+<?php } ?>
                         </ul>
                         <div id="account" class="account">
                             <ul class="nav navbar-nav navbar-right">
+<?php if(isset($_SESSION['nickname'])) { ?>
+                                <p class="navbar-text">Bonjour <?php echo $_SESSION['firstName'] ? $_SESSION['firstName'] . ' ' . $_SESSION['name'] : $_SESSION['nickname'] ?>!</p>
+                                <li><a title="Se déconnecter" id="connection" class="btn btn-primary navbar-btn" href="Stream/deconnexion" role="button"><span class="glyphicon glyphicon-log-out"></span>  Se déconnecter</a></li>
+<?php } else { ?>
                                 <li><a title="Se Connecter" id="connection" class="btn btn-primary navbar-btn" href="Home/loginForm" data-toggle="modal" data-target="#connect" role="button"><span class="glyphicon glyphicon-log-in"></span>  Se connecter</a></li>
                                 <li><a id="register" class="btn btn-link navbar-btn" href="Home/registerForm" data-toggle="modal" data-target="#sign" role="button">S'inscrire</a></li>
+<?php } ?>
                             </ul>
                         </div>
                     </div>
