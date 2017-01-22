@@ -51,11 +51,11 @@ class StreamController extends Controller {
             $this->view->CVList($params);
         }
     }
-    public function searchCV ($request, $cvs) {
+    public function searchCV ($request) {
         if($_SESSION['admin'] || $_SESSION['consultant']) {
             $page = array_key_exists(0, $request) ? $request[0] : 1;
 
-            $CVList = $this->model->searchCV(null, $page, $cvs);
+            $CVList = $this->model->searchCV(null, $page, $_GET['skill']);
             echo empty($CVList);
             foreach($CVList as &$CV) {
                 $CV['skills'] = $this->model->getSkills($CV['id']);
