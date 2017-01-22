@@ -1,5 +1,5 @@
 <div id="formulaire" class="container">
-    <form action="CV/addCV" method="post" enctype="multipart/form-data" class="form-horizontal">
+    <form action="CV/modify" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="form-group" >
             <label for="nom" class="col-2 col-form-label">Nom</label>
             <input type="text" name="nom" id="nom" class="form-control" value="<?php if(isset($_SESSION['name'])) echo $_SESSION['name']?>" placeholder="Entrez votre nom" required>
