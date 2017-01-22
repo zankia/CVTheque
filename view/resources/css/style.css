@@ -1,12 +1,113 @@
+@charset "utf-8";
+
 body {
     background-repeat: no-repeat;
     background-attachment: scroll;
 }
 
-#up {
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
+/* HEADER */
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-brand>img {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.account a:first-child {
+    padding: 5px 8px;
+    text-transform : uppercase;
+}
+
+#connection, #connect-popup {
+    background-color: #29303b;
+    border-color: #9d9d9d;
+    color: #ffffff ;
+    padding-right: 5px;
+}
+#connection:focus, #connect-popup:focus {
+    background-color: #29303b;
+    border-color: #9d9d9d;
+    color: #ffffff ;
+}
+
+#connection:hover, #connect-popup:hover {
+    background-color: #ffffff;
+    border-color: #29303b;
+    color: #29303b ;
+}
+
+.btn-link {
+    margin-left: 0.5em;
+    color: #191c22;
+}
+
+.modal-header {
+    color: #ffffff;
+    background-color: #29303b;
+}
+
+.close{
+    color : #ffffff;
+    text-shadow: none;
+    opacity: 0.4;
+}
+
+.close:focus, .close:hover {
+    color: #e22c27;
+    text-shadow: none;
+    opacity: 0.8;
+}
+
+/* ACCEUIL */
+.container-fluid {
+    color: #ffffff;
+    background-color:#29303b;
+}
+
+.container-fluid>h3 {
+    text-align: center;
+}
+
+#services {
+    min-height: 450px;
+}
+
+#icon-save, #icon-search, #icon-envelope {
+    font-size: 50px;
+    text-align: right;
+    padding-bottom: 20px;
+}
+h1 {
+    margin-bottom: 50px;
+}
+
+p {
+    text-align: justify;
+}
+
+/* CV */
+#formulaire {
+    margin-top: 50px;
+}
+
+/* BOX SHADOW POUR LES CV */
+.selected {
+    border-color: #ccc;
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted\9;
+    -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+
+#submit-cv {
+    background-color: #29303b;
+    border-color: #9d9d9d;
+    color: #ffffff ;
 }
 
 /* CVList */
@@ -44,64 +145,55 @@ body {
 #pdfModal iframe {
     width: 100%;
 }
-
-
-/* HEADER */
-
-.navbar {
-    margin-bottom: 0px;
+/* SKILL LIST */
+#container-skillList {
+    margin-top: 50px;
 }
 
-.navbar-brand>img {
-    height: 35px;
-    width: auto;
-    vertical-align: middle;
-}
 
-.account a:first-child {
-    padding: 5px 8px;
-    text-transform : uppercase;
-}
 
-.btn-primary {
-    background-color: #29303b;
-    border-color: #9d9d9d;
-    color: #ffffff !important;
-    padding-right: 5px;
-}
-.btn-primary:focus {
-    color: #29303b !important;
-}
-
-.btn-primary:hover {
-    color: #29303b !important;
-}
-
-.btn-link {
-    margin-left: 0.5em;
-    color: #191c22;
-}
-
-/* ACCEUIL */
-.container-fluid {
-    min-height: 500px;
-    color: #ffffff;
-    background-color:#29303b;
-}
-
-.container-fluid>h3 {
+/* ADMIN */
+#choice-gestion {
     text-align: center;
-}
-
-.container-fluid .glyphicon {
-    font-size: 150px;
-}
-
-h1 {
-    margin-bottom: 50px;
 }
 
 /* STREAM */
 p {
+    text-align: justify;
+}
+
+/* FOOT */
+.panel-foot {
+    text-align: center;
+}
+#up {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+}
+
+.btn-up {
+    background-color: #29303b;
+    color: #9d9d9d;
+}
+
+.btn-up:hover {
+    background-color: #29303b;
+    color: #ffffff;
+    -webkit-box-shadow: 0 0 8px #29303b;
+    box-shadow: 0 0 5px #29303b;
+}
+
+.btn-up:focus {
+    background-color: #9d9d9d;
+    color: #29303b;
+}
+
+.panel-footer {
+    margin-top: 50px;
+
+}
+
+#notice {
     text-align: justify;
 }

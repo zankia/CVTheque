@@ -3,7 +3,7 @@
 
 define('URI_ROOT_PATH', dirname($_SERVER['SCRIPT_NAME']) . '/');
 define('URL_ROOT_PATH', 'http://' . $_SERVER['SERVER_NAME'] . URI_ROOT_PATH);
-define('DEBUG', true);
+define('DEBUG', false);
 
 //gestion de l'affichage des erreurs
 

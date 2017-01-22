@@ -1,4 +1,7 @@
-    <h1>Page de gestion des utilisateurs</h1>
+    <div class="container-fluid">
+        <h1>Page de gestion des utilisateurs</h1>
+    </div>
+
 
     <div class="panel panel-default">
 
@@ -11,7 +14,7 @@
             <div class="form-group">
                 <input type="text" name="nickname" class="form-control" placeholder="Nom d'utilisateur">
             </div>
-            <button type="submit" class="btn btn-default">Rechercher</button>
+            <button type="submit" class="btn btn-default"><span class="col-sm-2 glyphicon glyphicon-search"></span>Rechercher</button>
             <a href="Admin/userList">Reinitialier la recherche</a>
         </form>
         <div class="panel-body">

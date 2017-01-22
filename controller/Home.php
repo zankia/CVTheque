@@ -22,6 +22,10 @@ class HomeController extends Controller {
         $this->view->setView("register.php");
     }
 
+    public function legalNotice() {
+        $this->view->setView("legalNotice.php");
+    }
+
     public function register() {
         if($_POST["passwd"] != $_POST["passwdconf"]) {
             View::error(12);

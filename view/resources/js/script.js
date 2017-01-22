@@ -56,3 +56,7 @@ function setIframePDF(link) {
 function scrollToTop() {
     $("body").animate({scrollTop: "0px"});
 }
+
+function scrollTo(div) {
+    $("body").animate({scrollTop: $(div).offset()["top"]},800);
+}

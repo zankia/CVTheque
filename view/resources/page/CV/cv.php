@@ -1,3 +1,10 @@
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h1 class="col-sm-12">Déposer votre CV</h1>
+            </div>
+        </div>
+    </div>
     <div id="formulaire" class="container">
         <form action="CV/addCV" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group" >
@@ -46,7 +53,7 @@
                 <input type="text" name="remarques" id="remarques">
             </div>
             <div class="form-group">
-                <input type="submit" value="Soumettre" name="submit" class="btn btn-primary">
+                <input id="submit-cv" type="submit" value="Soumettre" name="submit" class="btn btn-default">
             </div>
         </form>
     </div>
