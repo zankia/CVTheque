@@ -16,6 +16,12 @@ case 13:
 case 14:
     echo 'Base de données';
     break;
+case 15:
+    echo 'Erreur : Cette compétence existe déjà !';
+    break;
+case 16:
+    echo 'Erreur : Vous n\'êtes pas administrateur, le piratage c\'est mal !';
+    break;
 case 404:
     echo 'Page introuvable';
     break;
